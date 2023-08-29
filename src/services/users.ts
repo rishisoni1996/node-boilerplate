@@ -8,10 +8,10 @@ export default class UserService {
   constructor(@InjectRepository(User) private readonly userRepository: Repository<User>) {}
 
   public async findAll(): Promise<User[]> {
-    return await this.userRepository.find();
+    return this.userRepository.find();
   }
 
   public async findOne(id?: string, options?: FindOneOptions<User>): Promise<User> {
-    return await this.userRepository.findOne(id, options);
+    return this.userRepository.findOne(id, options);
   }
 }
